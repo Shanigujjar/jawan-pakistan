@@ -1,0 +1,11 @@
+data["Attack"].mean()
+attack_mean=data["Attack"].mean()
+def set_attack(val):
+    if val < attack_mean:
+        return "Attack low"
+    elif val==attack_mean:
+        return "Attack nuteral"
+    else:
+        return "Attack high"
+data["High_Low_Speed"]= data["Attack"].apply(set_attack)
+data["High_Low_HP"]= data["Attack"].apply(set_attack)        
